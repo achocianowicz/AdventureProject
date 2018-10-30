@@ -14,14 +14,15 @@ import android.widget.TextView;
 
 public class CharacterCreator extends AppCompatActivity {
     EditText usernameEditText = null;
-    EditText passwordEditText = null;
+
     private String username, password;
     Button serfButton = null;
     Button apprenticeButton = null;
     ImageView classImageView = null;
     TextView healthTextView = null;
     TextView strengthTextView = null;
-    TextView magicTextView = null;
+    TextView intelligenceTextView = null;
+    TextView dexTextView = null;
 
     Button startAdventureButton = null;
 
@@ -33,13 +34,14 @@ public class CharacterCreator extends AppCompatActivity {
         setContentView(R.layout.activity_character_creator);
 
         usernameEditText = findViewById(R.id.usernameEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
+
         serfButton = findViewById(R.id.serfButton);
         classImageView = findViewById(R.id.classImageView);
         apprenticeButton = findViewById(R.id.apprenticeButton);
         healthTextView = findViewById(R.id.healthTextView);
         strengthTextView = findViewById(R.id.strengthTextView);
-        magicTextView = findViewById(R.id.magicTextView);
+        intelligenceTextView = findViewById(R.id.intelligenceTextView);
+        dexTextView = findViewById(R.id.dexTextView);
         startAdventureButton = findViewById(R.id.startAdventureButton);
 
         usernameEditText.addTextChangedListener(new TextWatcher() {
@@ -58,22 +60,7 @@ public class CharacterCreator extends AppCompatActivity {
 
             }
         });
-        passwordEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                password = String.valueOf(passwordEditText.getText());
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
         serfButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,7 +72,8 @@ public class CharacterCreator extends AppCompatActivity {
                 classImageView.setImageResource(R.drawable.serf);
                 healthTextView.setText("100");
                 strengthTextView.setText("5");
-                magicTextView.setText("1");
+                intelligenceTextView.setText("1");
+                dexTextView.setText("2");
             }
         });
 
@@ -99,7 +87,8 @@ public class CharacterCreator extends AppCompatActivity {
                 classImageView.setImageResource(R.drawable.apprentice);
                 healthTextView.setText("100");
                 strengthTextView.setText("1");
-                magicTextView.setText("5");
+                intelligenceTextView.setText("5");
+                dexTextView.setText("1");
             }
         });
 
@@ -122,11 +111,5 @@ public class CharacterCreator extends AppCompatActivity {
         this.username = username;
     }
 
-    public String getPassword() {
-        return password;
-    }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

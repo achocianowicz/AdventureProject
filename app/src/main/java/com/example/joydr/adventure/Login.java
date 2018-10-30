@@ -13,6 +13,7 @@ public class Login extends AppCompatActivity {
     EditText usernameEditText = null;
     EditText passwordEditText = null;
     Button clearButton = null;
+    Button resetPasswordButton =null;
     Button loginButton = null;
     private String username, password;
 
@@ -23,6 +24,7 @@ public class Login extends AppCompatActivity {
         usernameEditText = findViewById(R.id.usernameEditText);
         passwordEditText = findViewById(R.id.passwordEditText);
         clearButton = findViewById(R.id.clearButton);
+        resetPasswordButton =findViewById(R.id.resetPasswordButton);
         loginButton = findViewById(R.id.saveButton);
 
         usernameEditText.addTextChangedListener(new TextWatcher() {
@@ -66,6 +68,20 @@ public class Login extends AppCompatActivity {
                 passwordEditText.setText("");
                 username = null;
                 password = null;
+
+            }
+        });
+
+        resetPasswordButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // TODO make password reset screen
+                /* //Check to see if info is correct and then proceedd
+                Intent intent = new Intent(v.getContext(), UserAccount.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
+                //Other wise tell them error of their ways
+                */
 
             }
         });
