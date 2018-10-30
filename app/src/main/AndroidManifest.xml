@@ -27,7 +27,8 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Login" />
         <activity android:name=".UserAccount" />
-        <activity android:name=".UserCharacters"></activity>
+        <activity android:name=".UserCharacters" />
+        <activity android:name=".UserCombat"></activity>
     </application>
 
 </manifest>
