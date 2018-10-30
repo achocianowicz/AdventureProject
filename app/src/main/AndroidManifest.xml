@@ -20,7 +20,14 @@
         <activity android:name=".MainMenu" />
         <activity android:name=".Town" />
         <activity android:name=".Shop" />
-        <activity android:name=".CharacterCreator"></activity>
+        <activity android:name=".CharacterCreator" />
+        <activity
+            android:name=".NewAccount"
+            android:label="@string/title_activity_new_account"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Login" />
+        <activity android:name=".UserAccount" />
+        <activity android:name=".UserCharacters"></activity>
     </application>
 
 </manifest>

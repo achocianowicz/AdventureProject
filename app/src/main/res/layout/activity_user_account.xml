@@ -4,47 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu"
     android:orientation="vertical"
-    android:layout_weight="1">
+    tools:context=".UserAccount">
 
     <Button
-        android:id="@+id/newAccountButton"
+        android:id="@+id/createCharacterButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="New Account" />
+        android:text="Create Character" />
 
     <Button
-        android:id="@+id/testButton"
+        android:id="@+id/pickCharacterButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="DEMO" />
+        android:text="Pick Character" />
 
     <Button
-        android:id="@+id/loginButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:text="Login" />
-
-    <Button
-        android:id="@+id/addFundsbutton"
+        android:id="@+id/addFundsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Add Funds" />
 
     <Button
-        android:id="@+id/settingButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/exitGameButton"
+        android:id="@+id/exitButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"

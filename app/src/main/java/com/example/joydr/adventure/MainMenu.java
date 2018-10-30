@@ -7,9 +7,9 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainMenu extends AppCompatActivity {
-Button newButton = null;
+Button newAccountButton = null;
     Button testButton = null;
-    Button loadButton = null;
+    Button loginButton = null;
     Button settingsButton = null;
     Button exitGameButton = null;
     Button addFundsbutton =null;
@@ -17,18 +17,18 @@ Button newButton = null;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-        newButton = findViewById(R.id.newButton);
+        newAccountButton = findViewById(R.id.newAccountButton);
         testButton = findViewById(R.id.testButton);
-        loadButton = findViewById(R.id.loadButton);
+        loginButton = findViewById(R.id.loginButton);
         addFundsbutton = findViewById(R.id.addFundsbutton);
         settingsButton = findViewById(R.id.settingButton);
         exitGameButton = findViewById(R.id.exitGameButton);
 
-        newButton.setOnClickListener(new View.OnClickListener() {
+        newAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //Make a new game
-                Intent intent = new Intent(v.getContext(), CharacterCreator.class);
+                Intent intent = new Intent(v.getContext(), NewAccount.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }
@@ -38,15 +38,19 @@ Button newButton = null;
             @Override
             public void onClick(View v) {
                 //test a battle out
+                //Quick Demo
                 Intent intent = new Intent(v.getContext(), TestBattle.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }
         });
-        loadButton.setOnClickListener(new View.OnClickListener() {
+        loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //load an old saved game
+                //login into Saved Account
+                Intent intent = new Intent(v.getContext(), Login.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                v.getContext().startActivity(intent);
             }
         });
         addFundsbutton.setOnClickListener(new View.OnClickListener() {
