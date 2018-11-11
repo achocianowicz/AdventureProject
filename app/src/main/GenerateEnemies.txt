@@ -1,0 +1,4 @@
+enemyname,enemyLevel,enemyCurrentBlock,enemyCurrentHP,enemyBaseHP,isEqupWith
+Skeleton Trooper,1,0,10,10,sword
+Skeleton Segarent,2,0,30,30,sword
+Skeleton Merencary,3,0,50,50,axe
