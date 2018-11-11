@@ -28,7 +28,9 @@
         <activity android:name=".Login" />
         <activity android:name=".UserAccount" />
         <activity android:name=".UserCharacters" />
-        <activity android:name=".UserCombat"></activity>
+        <activity android:name=".UserCombat" />
+        <activity android:name=".Jail" />
+        <activity android:name=".Arena"></activity>
     </application>
 
 </manifest>

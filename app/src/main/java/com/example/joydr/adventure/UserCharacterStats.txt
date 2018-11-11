@@ -1,0 +1,2 @@
+userCharacterName,userCharacterLevel,userCharacterBlock,userCharacterCurrentHP,userCharacterBaseHP,isEqupWith
+Bill,1,0,100,100,sword

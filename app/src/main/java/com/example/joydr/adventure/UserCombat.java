@@ -1,5 +1,8 @@
 package com.example.joydr.adventure;
 
+import android.content.Context;
+import android.net.Uri;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +12,16 @@ import android.widget.TextView;
 
 import org.w3c.dom.Text;
 
-public class UserCombat extends AppCompatActivity {
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
+public class UserCombat extends AppCompatActivity implements  CurrentCharacterMoveSet.OnFragmentInteractionListener {
     // Enemy components
     TextView enemyLevel = null;
     TextView enemyNameTextView = null;
@@ -20,14 +32,17 @@ public class UserCombat extends AppCompatActivity {
     TextView enemyBaseHP = null;
     ImageView enemyImage = null;
 
+
     // Player components
     TextView characterLevel = null;
     TextView characterNameTextView = null;
     private String character1Name = null;
     TextView characterBlockAmount = null;
-    private double character1Level = -1,character1Bolck = -1, character1CurrentHp = -1, character1BaseHp = -1;
+    private double character1Level = -1,character1Block = -1, character1CurrentHp = -1, character1BaseHp = -1;
     TextView characterCurrentHP = null;
     TextView characterBaseHP = null;
+    String displayCharacterName = null;
+    int displayCharacterLevel = -1, displayCharacterBlock = -1, displaycharacterCurrentHp,  displayCharacterBaseHp;
 
 
     //Buttons
@@ -38,6 +53,8 @@ public class UserCombat extends AppCompatActivity {
 
     //Fragments
       //To hold combat moves
+    CurrentCharacterMoveSet currentCharacterMoveSet = null;
+
       //To look in inventory
       //
 
@@ -60,13 +77,21 @@ public class UserCombat extends AppCompatActivity {
         characterBlockAmount = findViewById(R.id.characterBlockAmount);
         characterCurrentHP = findViewById(R.id.characterCurrentHP);
         characterBaseHP = findViewById(R.id.characterBaseHP);
+        //GetCharacterStats();
+        characterLevel.setText(displayCharacterLevel);
+        characterNameTextView.setText(displayCharacterName);
+        characterBlockAmount.setText(displayCharacterBlock);
+        characterCurrentHP.setText(displaycharacterCurrentHp);
+        characterBaseHP.setText(displayCharacterBaseHp);
+
 
         //BUtton
 fleeButton = findViewById(R.id.fleeButton);
 inventoryButton = findViewById(R.id.inventoryButton);
 movesButton = findViewById(R.id.moveButton);
         //fragments
-
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        currentCharacterMoveSet =  (CurrentCharacterMoveSet) fragmentManager.findFragmentById(R.id.currentCharacterMoveSet);
 
         fleeButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,6 +124,40 @@ movesButton = findViewById(R.id.moveButton);
 
 
     }
+
+    public void GetCharacterStats(Context context) throws IOException {
+        FileReader in = null;
+        String[] characterStats = null;
+        characterStats = new String[6];
+        InputStream inputStream = context.openFileInput("~\\AdventureProject\\app\\src\\main\\java\\com\\example\\joydr\\adventure\\UserCharacterStats.txt");
+        //FileWriter out = null;
+//UserCharacterStats.txt
+        try {
+           // in = new FileReader("~\\AdventureProject\\app\\src\\main\\java\\com\\example\\joydr\\adventure\\UserCharacterStats.txt");
+            //out = new FileWriter("output.txt");
+            if(inputStream !=null){
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+                String  receviveString = "";
+                StringBuilder stringBuilder = new StringBuilder();
+
+            }
+
+            int c;
+            while ((c = in.read()) != -1) {
+               // out.write(c);
+            }
+        }finally {
+            if (in != null) {
+                in.close();
+            }
+            //if (out != null) {
+             //   out.close();
+            //}
+        }
+    }
+
+
 
     public String getEnenmy1Name() {
         return enenmy1Name;
@@ -156,12 +215,12 @@ movesButton = findViewById(R.id.moveButton);
         this.character1Level = character1Level;
     }
 
-    public double getCharacter1Bolck() {
-        return character1Bolck;
+    public double getCharacter1Block() {
+        return character1Block;
     }
 
-    public void setCharacter1Bolck(double character1Bolck) {
-        this.character1Bolck = character1Bolck;
+    public void setCharacter1Block(double character1Block) {
+        this.character1Block = character1Block;
     }
 
     public double getCharacter1CurrentHp() {
@@ -178,5 +237,50 @@ movesButton = findViewById(R.id.moveButton);
 
     public void setCharacter1BaseHp(double character1BaseHp) {
         this.character1BaseHp = character1BaseHp;
+    }
+
+    public String getDisplayCharacterName() {
+        return displayCharacterName;
+    }
+
+    public void setDisplayCharacterName(String displayCharacterName) {
+        this.displayCharacterName = displayCharacterName;
+    }
+
+    public int getDisplayCharacterLevel() {
+        return displayCharacterLevel;
+    }
+
+    public void setDisplayCharacterLevel(int displayCharacterLevel) {
+        this.displayCharacterLevel = displayCharacterLevel;
+    }
+
+    public int getDisplayCharacterBlock() {
+        return displayCharacterBlock;
+    }
+
+    public void setDisplayCharacterBlock(int displayCharacterBlock) {
+        this.displayCharacterBlock = displayCharacterBlock;
+    }
+
+    public int getDisplaycharacterCurrentHp() {
+        return displaycharacterCurrentHp;
+    }
+
+    public void setDisplaycharacterCurrentHp(int displaycharacterCurrentHp) {
+        this.displaycharacterCurrentHp = displaycharacterCurrentHp;
+    }
+
+    public int getDisplayCharacterBaseHp() {
+        return displayCharacterBaseHp;
+    }
+
+    public void setDisplayCharacterBaseHp(int displayCharacterBaseHp) {
+        this.displayCharacterBaseHp = displayCharacterBaseHp;
+    }
+
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
     }
 }

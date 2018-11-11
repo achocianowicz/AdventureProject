@@ -1,0 +1,4 @@
+weaponName,move1Name,move1AttackDamage,move1Block,move2Name,move2AttackDamage,move2Block
+sword,Stab,5,0,Perry,0,5
+axe,Swing,10,0
+shield,Bash,2,0,Block,0,4
