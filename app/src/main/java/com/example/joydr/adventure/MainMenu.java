@@ -12,15 +12,15 @@ Button newAccountButton = null;
     Button loginButton = null;
     Button settingsButton = null;
     Button exitGameButton = null;
-    Button addFundsbutton =null;
+    //Button addFundsbutton =null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
         newAccountButton = findViewById(R.id.newAccountButton);
         testButton = findViewById(R.id.testButton);
-        loginButton = findViewById(R.id.loginButton);
-        addFundsbutton = findViewById(R.id.addFundsbutton);
+        loginButton = findViewById(R.id.goToUserAccount);
+
         settingsButton = findViewById(R.id.settingButton);
         exitGameButton = findViewById(R.id.exitGameButton);
 
@@ -53,12 +53,8 @@ Button newAccountButton = null;
                 v.getContext().startActivity(intent);
             }
         });
-        addFundsbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //Go to web server to buy funds for in game currecny
-            }
-        });
+
+
         settingsButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

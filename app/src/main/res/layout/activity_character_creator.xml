@@ -72,8 +72,7 @@
             android:id="@+id/classImageView"
             android:layout_width="416dp"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            app:srcCompat="@drawable/serf" />
+            android:layout_weight="1" />
     </LinearLayout>
 
     <LinearLayout

@@ -20,7 +20,7 @@ Button exitButton = null;
         playButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(), MainMenu.class);
+                Intent intent = new Intent(v.getContext(),Login.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
                 //finish();
