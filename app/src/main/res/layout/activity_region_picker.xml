@@ -4,42 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainMenu"
     android:orientation="vertical"
-    android:layout_weight="1">
+    tools:context=".RegionPicker">
 
     <Button
-        android:id="@+id/newAccountButton"
+        android:id="@+id/forestButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="New Account" />
+        android:background="@android:color/holo_green_dark"
+        android:text="Forest"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/testButton"
+        android:id="@+id/mountianButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="DEMO" />
+        android:background="@android:color/holo_red_dark"
+        android:text="Mountian"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/loginButton"
+        android:id="@+id/plainsButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Login" />
+        android:background="@android:color/holo_orange_light"
+        android:text="Plains"
+        android:textSize="30sp" />
 
     <Button
-        android:id="@+id/settingButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Settings"
-        android:layout_weight="1"/>
-
-    <Button
-        android:id="@+id/exitGameButton"
+        android:id="@+id/swampButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Exit" />
+        android:background="@android:color/background_dark"
+        android:text="Swamp"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/coastalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Coast"
+        android:textSize="30sp" />
 </LinearLayout>

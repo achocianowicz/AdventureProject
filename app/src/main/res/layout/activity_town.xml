@@ -8,6 +8,77 @@
     android:orientation="vertical"
     android:layout_weight="1">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/charNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="CharName" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Level" />
+
+        <TextView
+            android:id="@+id/charLevel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="100" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="EXP" />
+
+        <TextView
+            android:id="@+id/charEXP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="10000" />
+
+        <TextView
+            android:id="@+id/gold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="GOld" />
+
+        <TextView
+            android:id="@+id/userGoldInTown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1000000" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Day: " />
+
+        <TextView
+            android:id="@+id/showDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="100" />
+
+    </LinearLayout>
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
@@ -54,11 +125,11 @@
             android:textSize="30sp" />
 
         <Button
-            android:id="@+id/homeButton"
+            android:id="@+id/saveButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Home"
+            android:text="Save"
             android:textSize="30sp" />
     </LinearLayout>
 
@@ -90,14 +161,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:layout_weight="1">
-
-        <Button
-            android:id="@+id/inventoryButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Inventory"
-            android:textSize="30sp" />
 
         <Button
             android:id="@+id/questButton"

@@ -6,13 +6,14 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class UserAccount extends AppCompatActivity {
     Button createCharacterButton = null;
     Button pickCharacterButton = null;
     Button addFundsButton = null;
-    Button exitButton= null;
-
+    Button leaveUserAccountButton= null;
+TextView userNameTV = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,7 +21,10 @@ public class UserAccount extends AppCompatActivity {
         createCharacterButton = findViewById(R.id.createCharacterButton);
         pickCharacterButton = findViewById(R.id.pickCharacterButton);
         addFundsButton = findViewById(R.id.addFundsButton);
-        exitButton = findViewById(R.id.exitButton);
+        leaveUserAccountButton = findViewById(R.id.leaveUserAccountButton);
+        userNameTV = findViewById(R.id.userNameTV);
+
+        userNameTV.setText(Singleton.getInstance().getUsername());
 
 
         createCharacterButton.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +58,7 @@ public class UserAccount extends AppCompatActivity {
 
             }
         });
-        exitButton.setOnClickListener(new View.OnClickListener() {
+        leaveUserAccountButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 

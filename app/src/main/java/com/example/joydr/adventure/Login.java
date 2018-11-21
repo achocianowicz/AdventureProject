@@ -14,7 +14,7 @@ public class Login extends AppCompatActivity {
     EditText passwordEditText = null;
     Button clearButton = null;
     Button resetPasswordButton =null;
-    Button loginButton = null;
+    Button goToUserAccount = null;
     private String username, password;
 
     @Override
@@ -25,8 +25,8 @@ public class Login extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         clearButton = findViewById(R.id.clearButton);
         resetPasswordButton =findViewById(R.id.resetPasswordButton);
-        loginButton = findViewById(R.id.saveButton);
-
+        goToUserAccount = findViewById(R.id.goToUserAccount);
+/*
         usernameEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -60,7 +60,7 @@ public class Login extends AppCompatActivity {
             }
         });
 
-
+*/
         clearButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -86,17 +86,37 @@ public class Login extends AppCompatActivity {
             }
         });
 
-        loginButton.setOnClickListener(new View.OnClickListener() {
+        goToUserAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Check to see if info is correct and then proceedd
+                if (Singleton.getInstance().getUsername() == null) {
+                    Singleton.getInstance().setUsername("username");
+                }
+
+                if (Singleton.getInstance().getPassword() == null) {
+                    Singleton.getInstance().setPassword("password");
+                }
+
+              /* if(usernameEditText.getText().toString() == Singleton.getInstance().getUsername() &&
+                       passwordEditText.getText().toString() == Singleton.getInstance().getPassword()) {
+                    //Check to see if info is correct and then proceedd
+                    Intent intent = new Intent(v.getContext(), UserAccount.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    v.getContext().startActivity(intent);
+                    //Other wise tell them error of their ways
+                }
+                else {
+                    goToUserAccount.setText("Try again");
+
+
+                }
+
+            }
+            */
                 Intent intent = new Intent(v.getContext(), UserAccount.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
-                //Other wise tell them error of their ways
-
-            }
-        });
+            }});
     }
 
 }

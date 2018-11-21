@@ -30,7 +30,10 @@
         <activity android:name=".UserCharacters" />
         <activity android:name=".UserCombat" />
         <activity android:name=".Jail" />
-        <activity android:name=".Arena"></activity>
+        <activity android:name=".Arena" />
+        <activity android:name=".RegionPicker" />
+        <activity android:name=".ForestQuests" />
+        <activity android:name=".FightLevel1Bear"></activity>
     </application>
 
 </manifest>

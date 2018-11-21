@@ -27,6 +27,8 @@ public class TestBattle extends AppCompatActivity {
 
         enemyHealthtextView = findViewById(R.id.enemyHealthtextView);
         enemyHealthtextView.setText(String.valueOf(100));
+
+
         enemyButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -75,9 +77,9 @@ public class TestBattle extends AppCompatActivity {
     }
 
     private void DealDamage () {
-int damage = 10;
+        int damage = 10;
 
-       int currentEnemyHealth = Integer.parseInt(enemyHealthtextView.getText().toString());
+        int currentEnemyHealth = Integer.parseInt(enemyHealthtextView.getText().toString());
 
         currentEnemyHealth -= damage;
         enemyHealthtextView.setText(String.valueOf(currentEnemyHealth));

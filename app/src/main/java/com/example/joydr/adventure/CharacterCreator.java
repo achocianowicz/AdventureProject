@@ -15,7 +15,7 @@ import android.widget.TextView;
 public class CharacterCreator extends AppCompatActivity {
     EditText usernameEditText = null;
 
-    private String username, password;
+    private String username;
     Button serfButton = null;
     Button apprenticeButton = null;
     ImageView classImageView = null;
@@ -26,7 +26,7 @@ public class CharacterCreator extends AppCompatActivity {
 
     Button startAdventureButton = null;
 
-
+private String charClass = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,6 +74,7 @@ public class CharacterCreator extends AppCompatActivity {
                 strengthTextView.setText("5");
                 intelligenceTextView.setText("1");
                 dexTextView.setText("2");
+                charClass = "serf";
             }
         });
 
@@ -89,6 +90,7 @@ public class CharacterCreator extends AppCompatActivity {
                 strengthTextView.setText("1");
                 intelligenceTextView.setText("5");
                 dexTextView.setText("1");
+                charClass= "apprentice";
             }
         });
 
@@ -97,6 +99,14 @@ public class CharacterCreator extends AppCompatActivity {
             public void onClick(View v) {
                 //save data, pass data to town node
                 Intent intent = new Intent(v.getContext(), Town.class);
+
+                Singleton.getInstance().setCharName(username);
+                Singleton.getInstance().setCharClass(charClass);
+                Singleton.getInstance().setCharBaseHP(healthTextView.getText().toString().trim());
+                Singleton.getInstance().setCharCurrentHP(healthTextView.getText().toString().trim());
+                Singleton.getInstance().setCharSTR(strengthTextView.getText().toString().trim());
+                Singleton.getInstance().setCharINTELL(intelligenceTextView.getText().toString().trim());
+                Singleton.getInstance().setCharDEX(dexTextView.getText().toString().trim());
                 intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
                 v.getContext().startActivity(intent);
             }
